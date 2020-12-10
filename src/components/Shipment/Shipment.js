@@ -12,7 +12,7 @@ const Shipment = () => {
     const savedCart = getDatabaseCart();
     const orderDetails = {...loggedInUser, products: savedCart, shipment: data, orderTime: new Date()};
 
-    fetch('http://localhost:5000/orders', {
+    fetch('https://gentle-ridge-31201.herokuapp.com/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

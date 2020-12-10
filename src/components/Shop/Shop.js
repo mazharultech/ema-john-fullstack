@@ -14,7 +14,7 @@ const Shop = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://gentle-ridge-31201.herokuapp.com/products')
         .then(res => res.json())
         .then(data => {
             setProducts(data);
@@ -24,7 +24,7 @@ const Shop = () => {
     useEffect(() => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
-        fetch('http://localhost:5000/productByKeys', { 
+        fetch('https://gentle-ridge-31201.herokuapp.com/productByKeys', { 
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(productKeys)
